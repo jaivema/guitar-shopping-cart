@@ -2,7 +2,8 @@ import { useMemo } from "react"
 
 export default function Header({ cart, clearCart, removeFromCart, decreaseQuantity, increaseQuantity }) {
     const isEmpty = useMemo(() => cart.length === 0, [cart])
-    const cartTotal = useMemo( () => cart.reduce( (total, item ) => total + (item.quantity * item.price), 0), [cart] )
+    const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
+    const cartQty = useMemo(() => cart.reduce((total, item) => total + item.quantity, 0), [cart])
     
     return (
         <header className="py-5 header">
@@ -10,12 +11,15 @@ export default function Header({ cart, clearCart, removeFromCart, decreaseQuanti
                 <div className="row justify-cotent-center justify-content-md-between">
                     <div className="col-8 col-md-3 ">
                         <a href="index.html">
-                            <img className="img-fluid header-guitarra" src={`${import.meta.env.BASE_URL}img/logo.svg`}  alt="imagen logo" />
+                            <img className="img-fluid header-guitarra" src={`${import.meta.env.BASE_URL}img/logo.svg`} alt="imagen logo" />
                         </a>
                     </div>
-                    <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
+                    <nav className="col-md-6 mt-5 d-flex align-items-center justify-content-end">
+                        <span className="rounded-circle text-white px-1 bg-dark fs-6">
+                            {cartQty}
+                        </span>
                         <div className="carrito">
-                            <img className="img-fluid" src={`${import.meta.env.BASE_URL}img/carrito.png`} alt="carrito" />
+                            <img className="flex img-fluid" src={`${import.meta.env.BASE_URL}img/carrito.png`} alt="carrito" />
                             <div id="carrito" className="bg-white p-3">
                                 {isEmpty ? (
                                     <p className="text-center fw-bold">El carrito está vacío</p>
@@ -46,7 +50,7 @@ export default function Header({ cart, clearCart, removeFromCart, decreaseQuanti
                                                         >
                                                             -
                                                         </button>
-                                                            {guitar.quantity}
+                                                        {guitar.quantity}
                                                         <button
                                                             type="button"
                                                             className="btn btn-dark"
@@ -79,7 +83,7 @@ export default function Header({ cart, clearCart, removeFromCart, decreaseQuanti
                         </div>
                     </nav>
                 </div>
-            </div>
-        </header>
+            </div >
+        </header >
     )
 }
