@@ -10,12 +10,12 @@ export default function Header({ cart, clearCart, removeFromCart, decreaseQuanti
                 <div className="row justify-cotent-center justify-content-md-between">
                     <div className="col-8 col-md-3 ">
                         <a href="index.html">
-                            <img className="img-fluid header-guitarra" src="/img/logo.svg" alt="imagen logo" />
+                            <img className="img-fluid header-guitarra" src={`${import.meta.env.BASE_URL}/img/logo.svg`}  alt="imagen logo" />
                         </a>
                     </div>
                     <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
                         <div className="carrito">
-                            <img className="img-fluid" src="/img/carrito.png" alt="carrito" />
+                            <img className="img-fluid" src={`${import.meta.env.BASE_URL}img/carrito.png`} alt="carrito" />
                             <div id="carrito" className="bg-white p-3">
                                 {isEmpty ? (
                                     <p className="text-center fw-bold">El carrito está vacío</p>
@@ -34,7 +34,7 @@ export default function Header({ cart, clearCart, removeFromCart, decreaseQuanti
                                             {cart.map(guitar => (
                                                 <tr key={guitar.id}>
                                                     <td>
-                                                        <img className="img-fluid" src={`/img/${guitar.image}.jpg`} alt={guitar.name} />
+                                                        <img className="img-fluid" src={`${import.meta.env.BASE_URL}img/${guitar.image}.jpg`} alt={guitar.name} />
                                                     </td>
                                                     <td>{guitar.name}</td>
                                                     <td>€{guitar.price}</td>
