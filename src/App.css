@@ -1,0 +1,88 @@
+.header {
+  background-image: linear-gradient(to right, rgba(100, 100, 0, 0.3), rgba(0, 0, 0, 0.7)), url("img/header.jpg");
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+}
+
+.header .header-guitarra {
+  display: none;
+}
+
+.btn-dark {
+  text-transform: uppercase;
+}
+
+.carrito {
+  background-color: transparent;
+  border: none;
+  max-width: 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+.carrito #carrito {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.carrito:hover #carrito {
+  display: block;
+  background-color: white;
+  padding: 10px;
+  height: fit-content;
+  min-width: 350px;
+  width: fit-content;
+  top: 100%;
+  right: 0;
+  left: unset;
+  margin-left: unset;
+  margin-right: unset;
+}
+
+#carrito img {
+  width: 30px;
+}
+
+#carrito .btn-danger {
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 5px 9px;
+}
+
+#carrito .btn-dark {
+  padding: 0 2px;
+  margin: 0 3px;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .header .header-guitarra {
+    display: block;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-name: animarImagen;
+    z-index: 10;
+  }
+}
+
+@keyframes animarImagen {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
