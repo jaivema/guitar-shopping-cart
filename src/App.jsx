@@ -6,12 +6,12 @@ import './App.css'
 
 function App() {
   const initialCart = () => {
-    const localStorageCart = localStorage.getItem('cartLa-guitarrs')
+    const localStorageCart = localStorage.getItem('cartLa-guitars')
     return localStorageCart ? JSON.parse(localStorageCart) : []
   }
 
   const [data] = useState(db)
-  const [cart, setCart] = useState(initialCart())
+  const [cart, setCart] = useState(initialCart)
 
   function addToCart(item) {
     const itemExists = cart.findIndex(guitar => guitar.id === item.id)
