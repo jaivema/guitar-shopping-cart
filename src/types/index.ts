@@ -5,3 +5,7 @@ export type TGuitar = {
 	description: string;
 	price: number;
 };
+
+export type TCartItem = TGuitar & {
+	quantity: number;
+};
