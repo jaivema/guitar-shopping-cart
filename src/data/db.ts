@@ -1,10 +1,4 @@
-type TGuitar = {
-	id: number;
-	name: string;
-	image: string;
-	description: string;
-	price: number;
-};
+import type { TGuitar } from "../types";
 
 export const db: TGuitar[] = [
 	{
